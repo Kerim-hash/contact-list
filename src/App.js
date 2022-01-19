@@ -1,8 +1,8 @@
 import React, { useState, useEffect, Suspense } from "react";
 import Header from "./app/header/header";
+import Content from "./app/content/content";
 import "./app.css";
 import { useLocalStorage } from "./hook/useLocalStorage";
-const Content = React.lazy(() => import("./app/content/content"));
 function App() {
   // State and state setter for getting data
   const [contacts, setСontacts] = useLocalStorage("contacts", JSON.parse(localStorage.getItem("contacts")))

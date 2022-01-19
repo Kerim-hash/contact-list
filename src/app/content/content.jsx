@@ -9,7 +9,7 @@ const Content = ({ results, contacts, setСontacts}) => {
  
   const handleClick = (item) => {
     setModal(!modal)
-    document.body.style.overflow = 'hidden';
+    // document.body.style.overflow = 'hidden';
     setСontact(item)
   }
 
