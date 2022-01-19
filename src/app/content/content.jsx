@@ -38,7 +38,7 @@ const Content = ({ results, contacts, setСontacts}) => {
                 <td>{item.city}</td>
               </tr>
             }) : 
-            <tr className="content__notFound" > <td>не найдено</td> </tr>
+            <tr className="content__notFound"> <td>не найдено</td> </tr>
           }
           </tbody>
         </table>

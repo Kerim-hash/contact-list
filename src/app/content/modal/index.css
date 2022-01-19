@@ -79,20 +79,24 @@
     font-weight: 600;
     border-radius: 14px;
     max-width: 400px;
-    margin: 0 auto;
+    margin:20px 0 auto;
     border: none;
-  }
-  .modal__button:hover {
-    box-shadow: -2px -2px 5px #fff, 2px 2px 5px #BABECC;
   }
   .modal__button:active {
     box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #fff;
   }
-
+@media (min-width: 1200px){
+  .modal__button:hover {
+    box-shadow: -2px -2px 5px #fff, 2px 2px 5px #BABECC;
+  }
+}
 
   @media (max-width: 768px){
     .modal__inner {
       max-width: 80%;
+    }
+    .modal-content{
+      height: 350px;
     }
    
   }
@@ -114,4 +118,8 @@
       width: 85%;
 
     }
+    .modal-content{
+      height: 250px;
+    }
+    
   }
