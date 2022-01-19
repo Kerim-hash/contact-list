@@ -6,13 +6,11 @@ const Content = ({ results, contacts, setСontacts}) => {
   // State and state setter for the modal
   const [modal, setModal] = useState(false);
   const [contact, setСontact] = useLocalStorage("contact", JSON.parse(localStorage.getItem("contact")))
- 
+  // switch the modal state and overwrite the selected item in localStorage 
   const handleClick = (item) => {
     setModal(!modal)
-    // document.body.style.overflow = 'hidden';
     setСontact(item)
   }
-
   return (
     <div className="content">
       <div className="wrapper">

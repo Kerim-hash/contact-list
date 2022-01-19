@@ -31,12 +31,11 @@ function App() {
         // eslint-disable-next-line
   }, []);
 
-
-
   // State and state setter for the search query
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState("");
 
+  // sort by name
   const sortData = sort
     ? [...contacts, []].sort(function (a, b) {
         if (a.name > b.name) {
@@ -49,6 +48,7 @@ function App() {
       })
     : contacts;
 
+  // final array
   const results = !search
     ? sortData
     : contacts.filter((item) =>

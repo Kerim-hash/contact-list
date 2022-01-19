@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./index.css";
 const Modal = ({ setModalActive, contact, contacts, setСontacts }) => {
+
   const [contactObj, setContactObj] = useState({
     name: contact.name ,
     email:  contact.email,
@@ -32,17 +33,12 @@ const Modal = ({ setModalActive, contact, contacts, setСontacts }) => {
       website: contactObj.website,
     };
     //Find index of specific object using findIndex method.
-    // localStorage setItem
-    console.log(newObject)
-    // const arr = contacts.map((n) => (n.id === contact.id ? newObject : n))
-    // console.log(arr)
+    // Overwrite the modified object
     setСontacts(contacts.map((n) => (n.id === contact.id ? newObject : n)));
     setTimeout(() => {
       setModalActive(false);
     }, 500);
   };
-
-
     // close modal  outside click
     const modalRef = React.useRef();
     React.useEffect(() => {
@@ -50,15 +46,12 @@ const Modal = ({ setModalActive, contact, contacts, setСontacts }) => {
       const checkClick = (event) => {
         if (!event.path.includes(modalWrapper)) {
           setModalActive(false);
-          document.body.style.overflow = "auto";
-          
         }
       };
       document.addEventListener("click", checkClick);
       return () => {
         document.removeEventListener("click", checkClick);
       };
-      
     }, []);
   return (
     <div className="modal">
